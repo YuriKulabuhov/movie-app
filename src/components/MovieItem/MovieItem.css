@@ -1,0 +1,23 @@
+.ant-row-top {
+  height: 20rem;
+}
+.rate-film {
+  border: 2px solid;
+  width: 35px;
+  border-radius: 48%;
+  height: 35px;
+  padding: 5px;
+}
+.ant-card {
+  width: 645px;
+  padding: 10px;
+}
+.ant-tag {
+  margin: 3px;
+}
+.ant-col-10 {
+  flex: 1 1 auto;
+}
+.ant-col-12 {
+  box-sizing: content-box;
+}
