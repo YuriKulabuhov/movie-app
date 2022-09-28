@@ -72,12 +72,7 @@ export default class MovieItem extends Component {
     const body = {
       value: count,
     };
-    return POST_RATE_MOVIE(this.props.id, this.props.guestSessionId, body).then((response) => {
-      if (response.ok) {
-        return;
-      }
-      alert(response.status);
-    });
+    return POST_RATE_MOVIE(this.props.id, this.props.guestSessionId, body);
   };
 
   getTagGenres = (array1 = this.props.genre_ids, array2 = this.props.genresIdList) => {
