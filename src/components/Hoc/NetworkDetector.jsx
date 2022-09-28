@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { Alert } from 'antd';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default function (ComposedComponent) {
   class NetworkDetector extends Component {
     state = {

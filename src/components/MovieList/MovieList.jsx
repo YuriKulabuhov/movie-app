@@ -8,11 +8,10 @@ function MovieList(props) {
     <div>
       <Row gutter={[24, 16]} justify="space-evenly">
         {props.films.map((film) => (
-          <SwapiServiceConsumer>
+          <SwapiServiceConsumer key={film.id}>
             {(genresId) => {
               return (
                 <MovieItem
-                  key={film.id}
                   {...film}
                   guestSessionId={props.guestSessionId}
                   genresIdList={genresId}

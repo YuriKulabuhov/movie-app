@@ -1,12 +1,14 @@
 import './Header.css';
 import { Input, Menu, Alert } from 'antd';
 import { Component } from 'react';
+
 const _ = require('lodash');
 
 export default class Header extends Component {
   state = {
     searchValue: '',
   };
+
   componentDidUpdate(prevProps, prevState) {
     const debounced = _.debounce(this.props.changeResults, 3000, {
       leading: false,
@@ -15,12 +17,14 @@ export default class Header extends Component {
     if (prevState !== this.state && this.state.searchValue.trim().length !== 0)
       debounced(this.state.searchValue);
   }
+
   changeSearching = (event) => {
     this.setState({
       searchValue: event.target.value,
     });
     this.props.handlerSearchValue(event.target.value);
   };
+
   render() {
     const menuItems = [
       {
@@ -40,7 +44,7 @@ export default class Header extends Component {
           defaultSelectedKeys={['search']}
           items={menuItems}
           onSelect={({ key }) => this.props.changeTab(key)}
-        ></Menu>
+        />
         {this.props.tabActive !== 'rated' ? (
           <Input
             placeholder="What are we going to watch?"
@@ -49,7 +53,7 @@ export default class Header extends Component {
             onChange={this.changeSearching}
           />
         ) : this.props.emptyRatedFilms ? (
-          <Alert message="No results" banner={true} type="info" />
+          <Alert message="No results" banner type="info" />
         ) : null}
       </header>
     );
