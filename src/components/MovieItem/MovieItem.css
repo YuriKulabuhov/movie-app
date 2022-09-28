@@ -3,10 +3,10 @@
 }
 .rate-film {
   border: 2px solid;
-  width: 35px;
-  border-radius: 48%;
-  height: 35px;
-  padding: 5px;
+  border-radius: 50%;
+  height: 40px;
+  padding: 8px;
+  align-self: flex-start;
 }
 .ant-card {
   width: 645px;
@@ -20,4 +20,41 @@
 }
 .ant-col-12 {
   box-sizing: content-box;
+}
+.ant-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+@media screen and (max-width: 412px) {
+  .ant-card {
+    font-size: x-small;
+    width: 100%;
+  }
+  .ant-card-small > .ant-card-body {
+    padding: 4px;
+  }
+  .ant-image-img {
+    width: 80px;
+    height: 120px;
+    position: relative;
+  }
+  .ant-typography {
+    position: relative;
+    text-align: left;
+  }
+  .text-overview {
+    position: relative;
+    top: 5px;
+    left: -90px;
+    width: 380px;
+  }
+  .ant-rate {
+    position: relative;
+    width: 320px;
+  }
+  .rate-film {
+    position: relative;
+    left: 50px;
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "singleQuote": true,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "endOfLine": "crlf",
+  "printWidth": 100,
+  "max-len": ["error", 120, 2]
+}
+

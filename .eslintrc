@@ -1,0 +1,74 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/prop-types": 0,
+    "linebreak-style": ["error", "windows"],
+    "react/state-in-constructor": [0, "never"],
+    "class-methods-use-this": [
+      "error",
+      {
+        "enforceForClassFields": false
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/destructuring-assignment": [
+      0,
+      "always",
+      {
+        "ignoreClassFields": true,
+        "destructureInSignature": "ignore"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "no-unused-vars": "off",
+    "react/require-default-props": [0],
+    "no-param-reassign": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/button-has-type": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "react/forbid-prop-types": "off",
+    "import/order": "off",
+    "react/function-component-definition": "off",
+    "consistent-return": "off",
+    "no-nested-ternary": "off",
+    "no-plusplus": "off",
+    "no-alert": "off",
+    "camelcase": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
