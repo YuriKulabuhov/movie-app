@@ -3,7 +3,7 @@ import intlFormat from 'date-fns/intlFormat';
 import { Card, Image, Tag, Typography, Col, Rate } from 'antd';
 import { Component } from 'react';
 import icon from './ImageNoneDownload(1).png';
-import { POST_RATE_MOVIE } from '../../services';
+import { postRateMovie } from '../../services';
 
 const { Title, Paragraph } = Typography;
 const IMG_API = 'https://image.tmdb.org/t/p/w500';
@@ -72,7 +72,7 @@ export default class MovieItem extends Component {
     const body = {
       value: count,
     };
-    return POST_RATE_MOVIE(this.props.id, this.props.guestSessionId, body);
+    return postRateMovie(this.props.id, this.props.guestSessionId, body);
   };
 
   getTagGenres = (array1 = this.props.genre_ids, array2 = this.props.genresIdList) => {

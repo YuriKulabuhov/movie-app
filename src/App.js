@@ -12,12 +12,7 @@ import NetworkDetector from './components/Hoc/NetworkDetector';
 
 import { SwapiServiceProvider } from './context/swapi-servers-context';
 
-import {
-  GET_GENRE_ID,
-  GET_RATED_MOVIES,
-  GET_SEARCH_START,
-  START_GUESTSESSION,
-} from './services/index';
+import { getGenreId, getRatedMovies, getSearchStart, startGuestSession } from './services/index';
 
 class App extends Component {
   state = {
@@ -43,7 +38,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    GET_GENRE_ID().then(
+    getGenreId().then(
       (body) => {
         this.setState({
           genresId: body.genres,
@@ -57,7 +52,7 @@ class App extends Component {
       }
     );
 
-    GET_SEARCH_START(this.state.searchValue, this.state.numberPage).then(
+    getSearchStart(this.state.searchValue, this.state.numberPage).then(
       (body) => {
         this.setState({
           films: body.results,
@@ -77,7 +72,7 @@ class App extends Component {
       }
     );
 
-    START_GUESTSESSION().then(
+    startGuestSession().then(
       (result) => {
         this.setState({
           guestSessionId: result.guest_session_id,
@@ -95,7 +90,7 @@ class App extends Component {
   changeTab = (key) => {
     switch (key) {
       case 'rated':
-        GET_RATED_MOVIES(this.state.guestSessionId).then((result) =>
+        getRatedMovies(this.state.guestSessionId).then((result) =>
           this.setState({
             ratedFilms: result.results,
 
@@ -124,7 +119,7 @@ class App extends Component {
       numberPage,
     });
 
-    GET_SEARCH_START(searchText, numberPage).then(
+    getSearchStart(searchText, numberPage).then(
       (result) => {
         this.setState({
           films: result.results,
@@ -152,7 +147,7 @@ class App extends Component {
       isLoaded: true,
     });
 
-    GET_SEARCH_START(this.state.searchValue, page).then(
+    getSearchStart(this.state.searchValue, page).then(
       (result) => {
         this.setState({
           films: result.results,
