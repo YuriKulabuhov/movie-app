@@ -1,1 +1,1 @@
-https://movie-app-dun-six.vercel.app/
+https://movie-app-yurikulabuhov.vercel.app/
